@@ -1,0 +1,5 @@
+    font-weight: lighter;
+    font-style:italic;
+    color:white;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px #555;

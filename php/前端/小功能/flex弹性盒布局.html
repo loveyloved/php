@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex术语</title>
+</head>
+<body>
+    <div class="container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+        }
+/*         弹性容器 */
+        .container{
+            height: 15em;
+            border:1px solid #000;
+            display: flex;
+           /*  这个盒子就是采用了flex布局 */
+        }
+  /*       弹性容器的“子元素”，弹性项目 */
+        .container>.item{
+            width:10em;
+            height: 5em;
+            background-color: wheat;
+            border: 1px solid #000;
+        }
+        .container{
+           /*  主轴剩余空间分配 */
+           place-content: center;
+           /* 两端对齐 */
+           place-content: space-between; 
+      /*      /12对奇 */
+            place-content: space-around;
+       /*      平分对齐 */
+            place-content: space-evenly;
+
+ /*            项目在交叉轴的对齐 */
+            place-items: end;
+            place-items: center;
+        }
+       /*  单个项目的特殊处理 */
+       .container .item:nth-of-type(2){
+        background-color: red;
+        place-self: end;
+        order:0;
+       }
+       
+
+       .container .item:first-of-type{
+        background-color: blue;
+        order:2;
+       }
+
+       .container .item{
+/*         flex:放大因子 收缩因子 计算宽度 */
+/*             flex:不让放大 允许收缩 width */
+/* 优先级最高 */
+        flex:0 1 5em;
+        flex:initial;
+        flex:1 1 auto;
+        flex:auto;
+     /*    完全失去弹性 */
+/*         flex:0 0 auto;
+        flex:none; */
+
+       }
+    </style>
+</body>
+</html>

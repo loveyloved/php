@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    
+</head>
+<body>
+    <div class="container">
+       <!--  显示设置网格 -->
+        <div class="item">item1</div>
+<!--         <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        <div class="item">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+        <div class="item">item9</div>
+        <div class="item">item10</div>
+        <div class="item">item11</div> -->
+    </div>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 10em 10em 10em;
+            grid-template-rows: 10em 10em 10em;
+            grid-template-columns: repeat(3,auto);
+            grid-template-rows: repeat(4,10em);
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            grid-template-rows: repeat(3,100px);
+/*             隐网格：多出来的元素 */
+          /*   grid-auto-rows: 50px; */
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+/*             行与列的间隙 */
+            /* gap:水平间隙 垂直间隙 */
+            gap:10px 20px;
+        }
+        .container .item{
+            background-color: red;
+            margin:
+        }
+        .container .item:first-of-type{
+            background-color: lightseagreen;
+            grid-row:2/3;
+            grid-column: 2/3;
+            /* grid 跨越 */
+            grid-column: 2/4;
+            grid-row: 2/4;
+           /*  /grid 跨越简写 */
+           grid-column: 2 span 2;
+           grid-row:2 span 2;
+
+           /* /* grid-area 画领地 * 行开，列开，行结束，列结束/ */
+           grid-area: 3/2/4/3;
+           grid-area: 3/1/4/4;
+           grid-area: 3/1/span 1/span 3;
+        }
+    </style>
+</body>
+</html>

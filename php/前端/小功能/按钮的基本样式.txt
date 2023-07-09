@@ -1,0 +1,13 @@
+  .btn{
+            background-color: seagreen;
+            color: white;
+            border: none;
+            outline: none;
+        }
+
+        .btn:hover{
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.3s;
+            padding: 0.4rem 0.8rem;
+        }
